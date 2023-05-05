@@ -145,7 +145,7 @@ function TopSec() {
             <div className="flex gap-5 overflow-x-auto">
                 {tops.map((top, topKey) => (
                     <Paper key={topKey} className="flex-shrink-0">
-                        <img src="/assets/img/konosuba.png" style={{ width: 150, height: 200 }} />
+                        <img src="/otakustation/assets/img/konosuba.png" style={{ width: 150, height: 200 }} />
                     </Paper>
                 ))}
             </div>
@@ -191,7 +191,7 @@ function LatestSec() {
             <div className="grid grid-cols-3 gap-5 mb-5">
                 {latests.map((latest, latestKey) => (
                     <Paper key={latestKey} className="flex hover:bg-blue-200">
-                        <img src="/assets/img/konosuba.png" style={{ width: 100, height: 125 }} />
+                        <img src="/otakustation/assets/img/konosuba.png" style={{ width: 100, height: 125 }} />
                         <div className="px-5 py-2 flex flex-col justify-between">
                             <div>
                                 <p className="font-bold text-xl">{latest.title}</p>
@@ -282,7 +282,7 @@ function WeeklySec() {
                             component="img"
                             alt="green iguana"
                             height="140"
-                            image="/assets/img/konosuba.png"
+                            image="/otakustation/assets/img/konosuba.png"
                             style={{ maxHeight: 140 }}
                         />
                         <CardContent>
@@ -325,7 +325,7 @@ function NewsSec() {
                         component="img"
                         alt="green iguana"
                         height="140"
-                        image="/assets/img/konosuba.png"
+                        image="/otakustation/assets/img/konosuba.png"
                         style={{ maxHeight: 400 }}
                     />
                     <CardContent>
@@ -337,7 +337,7 @@ function NewsSec() {
                     <div className="flex flex-col justify-between gap-1" style={{ height: 550 }}>
                         {news.map((newx, newxIndex) => (newxIndex > 0) && (
                             <Paper key={newxIndex} className="flex hover:bg-blue-200">
-                                <img src="/assets/img/konosuba.png" style={{ width: 100, height: 125 }} />
+                                <img src="/otakustation/assets/img/konosuba.png" style={{ width: 100, height: 125 }} />
                                 <div className="px-5 py-2 flex flex-col justify-between">
                                     <div>
                                         <p className="font-bold text-xl">{newx.title}</p>
