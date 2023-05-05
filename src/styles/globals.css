@@ -26,3 +26,7 @@ body{
   padding: 24px;
   background-color: red;
 }
+
+section{
+  margin-bottom: 100px;
+}
