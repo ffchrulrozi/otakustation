@@ -5,6 +5,10 @@
 body{
   background-color: whitesmoke;
 }
+.main{
+  height: 100vh;
+  overflow-y: scroll;
+}
 
 .cover{
   width: 100%;
