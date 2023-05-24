@@ -4,7 +4,7 @@ import { Avatar, Box, Card, CardContent, CardMedia, List, ListItem, ListItemAvat
 import Paper from '@mui/material/Paper';
 import { useState } from "react"
 
-export default function () {
+export default function AnimeDetail() {
     return (
         <>
             <main className="grid grid-cols-6">
