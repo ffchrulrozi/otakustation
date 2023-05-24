@@ -1,34 +1,31 @@
-import LeftBar from "../_/LeftBar"
-import { getImg } from "../../util"
-import { Avatar, Box, Card, CardContent, CardMedia, List, ListItem, ListItemAvatar, ListItemText, Tab, Table, TableBody, TableCell, TableContainer, TableRow, Tabs } from "@mui/material"
+import { getImg } from "@/util"
+import { Avatar, Box, Card, CardContent, CardMedia, Container, List, ListItem, ListItemAvatar, ListItemText, Tab, Table, TableBody, TableCell, TableContainer, TableRow, Tabs } from "@mui/material"
 import Paper from '@mui/material/Paper';
 import { useState } from "react"
+import Footer from "../_/Footer";
 
 export default function AnimeDetail() {
     return (
         <>
-            <main className="grid grid-cols-6">
-                <div className="col-span-1">
-                    <LeftBar />
-                </div>
-                <div className="col-span-5 main px-10 pt-10">
-                    <div className="grid grid-cols-4 gap-5 mb-10">
-                        <div className="col-span-1">
-                            <LeftInfoSec />
-                        </div>
-                        <div className="col-span-3">
-                            <RightInfoSec />
-                        </div>
-                    </div>
+            <Container>
 
-                    <section>
-                        <PartSec />
-                    </section>
-                    <section>
-                        <RecommendSec />
-                    </section>
+                <div className="grid grid-cols-4 gap-5 mb-10">
+                    <div className="col-span-1">
+                        <LeftInfoSec />
+                    </div>
+                    <div className="col-span-3">
+                        <RightInfoSec />
+                    </div>
                 </div>
-            </main>
+
+                <section>
+                    <PartSec />
+                </section>
+                <section>
+                    <RecommendSec />
+                </section>
+            </Container>
+            <Footer />
         </>
     )
 }
