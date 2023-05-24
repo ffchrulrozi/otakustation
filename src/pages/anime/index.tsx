@@ -1,6 +1,6 @@
 import { Box, TextField, Paper, Pagination, Tabs, Tab, Typography, Card, CardMedia, CardContent } from "@mui/material";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { useRouter } from "next/router";
+import router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import LeftBar from "../_/LeftBar";
 import { getImg } from "../../util";
@@ -126,16 +126,16 @@ function TopSec() {
     }
 
     const [tops] = useState<ITop[]>([
-        { title: 'Black Clover', url: '', img: 'bc.jpg' },
-        { title: 'Shingeki no Kyojin', url: '', img: 'aot.jpg' },
-        { title: 'Kuroko no Basuke', url: '', img: 'knb.jpg' },
-        { title: 'Chainsaw Man', url: '', img: 'csm.jpg' },
-        { title: 'Akame ga Kill', url: '', img: 'agk.jpg' },
-        { title: 'Magi', url: '', img: 'magi.jpg' },
-        { title: 'Dr. Stone', url: '', img: 'stone.jpg' },
-        { title: 'Tate no Yuusha', url: '', img: 'tny.jpg' },
-        { title: 'Kimetsu no Yaiba', url: '', img: 'kny.jpg' },
-        { title: 'Higehiro', url: '', img: 'higehiro.jpg' },
+        { title: 'Black Clover', url: '/anime/dr-stone', img: 'bc.jpg' },
+        { title: 'Shingeki no Kyojin', url: '/anime/dr-stone', img: 'aot.jpg' },
+        { title: 'Kuroko no Basuke', url: '/anime/dr-stone', img: 'knb.jpg' },
+        { title: 'Chainsaw Man', url: '/anime/dr-stone', img: 'csm.jpg' },
+        { title: 'Akame ga Kill', url: '/anime/dr-stone', img: 'agk.jpg' },
+        { title: 'Magi', url: '/anime/dr-stone', img: 'magi.jpg' },
+        { title: 'Dr. Stone', url: '/anime/dr-stone', img: 'stone.jpg' },
+        { title: 'Tate no Yuusha', url: '/anime/dr-stone', img: 'tny.jpg' },
+        { title: 'Kimetsu no Yaiba', url: '/anime/dr-stone', img: 'kny.jpg' },
+        { title: 'Higehiro', url: '/anime/dr-stone', img: 'higehiro.jpg' },
     ])
 
     return (
@@ -164,13 +164,13 @@ function LatestSec() {
     }
 
     const [latests] = useState<ILatest[]>([
-        { title: 'Black Clover', url: '', img: 'bc.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Shingeki no Kyojin', url: '', img: 'aot.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Kuroko no Basuke', url: '', img: 'knb.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Chainsaw Man', url: '', img: 'csm.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Akame ga Kill', url: '', img: 'agk.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Magi', url: '', img: 'magi.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
-        { title: 'Dr. Stone', url: '', img: 'stone.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Black Clover', url: '/anime/dr-stone', img: 'bc.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Shingeki no Kyojin', url: '/anime/dr-stone', img: 'aot.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Kuroko no Basuke', url: '/anime/dr-stone', img: 'knb.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Chainsaw Man', url: '/anime/dr-stone', img: 'csm.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Akame ga Kill', url: '/anime/dr-stone', img: 'agk.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Magi', url: '/anime/dr-stone', img: 'magi.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
+        { title: 'Dr. Stone', url: '/anime/dr-stone', img: 'stone.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
         { title: 'Tate no Yuusha', url: 'tny.jpg', img: 'tny.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
         { title: 'Kimetsu no Yaiba', url: 'kny.jpg', img: 'kny.jpg', subTitle: 'Season 1 episode 12', updatedAt: '20 August, 20:10' },
     ])
@@ -191,7 +191,7 @@ function LatestSec() {
             </div>
             <div className="grid grid-cols-3 gap-5 mb-5">
                 {latests.map((latest, latestKey) => (
-                    <Paper key={latestKey} className="flex hover:bg-blue-200">
+                    <Paper key={latestKey} className="flex hover:bg-blue-200" onClick={()=>router.push(latest.url)}>
                         <img src={getImg(latest.img)} style={{ width: 100, height: 125 }} />
                         <div className="px-5 py-2 flex flex-col justify-between">
                             <div>
@@ -242,16 +242,16 @@ function WeeklySec() {
         { dayCode: 6, dayName: 'Saturday', isActive: false },
     ]);
     const [animeDates] = useState<IAnimeDate[]>([
-        { dayCode: 0, title: 'Shingeki no Kyojin', subTitle: 'Season 4 episode 01', img: 'aot.jpg', url: '' },
-        { dayCode: 0, title: 'Kuroko no Basuke', subTitle: 'Season 4 episode 01', img: 'knb.jpg', url: '' },
-        { dayCode: 0, title: 'Berserk', subTitle: 'Season 4 episode 01', img: 'berserk.jpg', url: '' },
-        { dayCode: 0, title: 'Slime Datta Ken', subTitle: 'Season 4 episode 01', img: 'slime.jpg', url: '' },
-        { dayCode: 0, title: 'One Punch Man', subTitle: 'Season 4 episode 01', img: 'opm.jpg', url: '' },
-        { dayCode: 0, title: 'Ajin', subTitle: 'Season 4 episode 01', img: 'ajin.jpg', url: '' },
-        { dayCode: 0, title: 'Konosuba', subTitle: 'Season 4 episode 01', img: 'konosuba.jpg', url: '' },
-        { dayCode: 0, title: 'High School of The Dead', subTitle: 'Season 4 episode 01', img: 'hsd.jpg', url: '' },
-        { dayCode: 0, title: 'Black Clover', subTitle: 'Season 4 episode 01', img: 'bc.jpg', url: '' },
-        { dayCode: 0, title: 'Akame ga Kill', subTitle: 'Season 4 episode 01', img: 'agk.jpg', url: '' },
+        { dayCode: 0, title: 'Shingeki no Kyojin', subTitle: 'Season 4 episode 01', img: 'aot.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Kuroko no Basuke', subTitle: 'Season 4 episode 01', img: 'knb.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Berserk', subTitle: 'Season 4 episode 01', img: 'berserk.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Slime Datta Ken', subTitle: 'Season 4 episode 01', img: 'slime.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'One Punch Man', subTitle: 'Season 4 episode 01', img: 'opm.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Ajin', subTitle: 'Season 4 episode 01', img: 'ajin.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Konosuba', subTitle: 'Season 4 episode 01', img: 'konosuba.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'High School of The Dead', subTitle: 'Season 4 episode 01', img: 'hsd.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Black Clover', subTitle: 'Season 4 episode 01', img: 'bc.jpg', url: '/anime/dr-stone' },
+        { dayCode: 0, title: 'Akame ga Kill', subTitle: 'Season 4 episode 01', img: 'agk.jpg', url: '/anime/dr-stone' },
     ])
 
     function a11yProps(index: number) {
@@ -311,11 +311,11 @@ function NewsSec() {
     }
 
     const [news] = useState<INew[]>([
-        { title: 'Tensura Scarlet Bond will be released', desc: 'Tempor occaecat qui amet mollit reprehenderit quis officia ea.', img: 'slime.jpg', url: '', updatedAt: '06 Mei' },
-        { title: 'Black Clover Serial movie will be published in july', desc: 'Ipsum aute officia labore qui officia ipsum dolor ut ut aute in reprehenderit cupidatat.', img: 'bc.jpg', url: '', updatedAt: '06 Mei' },
-        { title: 'Magi has no new season for this anime', desc: 'Dolore officia enim amet culpa magna enim eu duis magna labore id eu commodo sint.', img: 'magi.jpg', url: '', updatedAt: '06 Mei' },
-        { title: 'Dr. Stone New World is on going!', desc: 'Labore adipisicing ut ad ea anim.', img: 'stone.jpg', url: '', updatedAt: '06 Mei' },
-        { title: 'Boruto anime will be hiatus on episode 45', desc: 'Magna enim eiusmod cillum qui consectetur cillum magna.', img: 'boruto.jpg', url: '', updatedAt: '06 Mei' }
+        { title: 'Tensura Scarlet Bond will be released', desc: 'Tempor occaecat qui amet mollit reprehenderit quis officia ea.', img: 'slime.jpg', url: '/anime/dr-stone', updatedAt: '06 Mei' },
+        { title: 'Black Clover Serial movie will be published in july', desc: 'Ipsum aute officia labore qui officia ipsum dolor ut ut aute in reprehenderit cupidatat.', img: 'bc.jpg', url: '/anime/dr-stone', updatedAt: '06 Mei' },
+        { title: 'Magi has no new season for this anime', desc: 'Dolore officia enim amet culpa magna enim eu duis magna labore id eu commodo sint.', img: 'magi.jpg', url: '/anime/dr-stone', updatedAt: '06 Mei' },
+        { title: 'Dr. Stone New World is on going!', desc: 'Labore adipisicing ut ad ea anim.', img: 'stone.jpg', url: '/anime/dr-stone', updatedAt: '06 Mei' },
+        { title: 'Boruto anime will be hiatus on episode 45', desc: 'Magna enim eiusmod cillum qui consectetur cillum magna.', img: 'boruto.jpg', url: '/anime/dr-stone', updatedAt: '06 Mei' }
     ])
 
     return (
