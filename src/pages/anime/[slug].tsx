@@ -102,7 +102,7 @@ function RightInfoSec() {
                 </CardContent>
             </Card>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-3">
                 {figures.map((figure, figureIndex) => (
                     <div className="col-span-1" key={figureIndex}>
                         <Paper className="flex hover:bg-blue-200">
